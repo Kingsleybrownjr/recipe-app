@@ -198,6 +198,7 @@ label {
 }
 
 .complete-recipe {
+	display: inline-block;
 	margin-top: 2rem;
 	font-size: 0.9rem;
 	padding: 5px 10px;
@@ -212,7 +213,8 @@ label {
 	margin-bottom: 0.4rem;
 }
 
-.remove-recipe button {
+.remove-recipe a {
+	display: inline-block;
 	background: transparent;
 	border: none;
 	background-color: rgb(182, 45, 45);
@@ -224,6 +226,6 @@ label {
 	margin-bottom: 50px;
 }
 
-.remove-recipe button:hover {
+.remove-recipe a:hover {
 	background-color: rgb(124, 38, 38);
 }
