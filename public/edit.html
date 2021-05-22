@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles/styles.css" />
+		<title>Customize Recipe</title>
+	</head>
+	<body>
+		<header>
+			<div class="header__container">
+				<div class="container">
+					<h1 class="header__container--title">Recipe App</h1>
+					<h2 class="header__container--subtitle">Customize Your Recipe</h2>
+				</div>
+			</div>
+			<div class="header__input">
+				<div class="container">
+					<a class="home-link" href="/">Home</a>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div class="recipe__edit--container">
+				<div class="recipe__edit">
+					<input
+						class="recipe__edit--title"
+						id="edit-title"
+						type="text"
+						placeholder="Recipe Title"
+					/>
+					<textarea
+						id="edit-body"
+						class="recipe__edit--body"
+						cols="30"
+						rows="10"
+					></textarea>
+				</div>
+			</div>
+			<div class="ingredients-container">
+				<div class="checklist">
+					<h3 class="checklist__title">Ingredients</h3>
+
+					<div class="checklist__ingredients">
+						<div class="checklist__ingredients--list">
+							<label>
+								<input class="checkbox" type="checkbox" />
+								<p class="checkbox__title">Rice</p>
+							</label>
+							<button class="button">Delete Recipe</button>
+						</div>
+						<div class="checklist__ingredients--list">
+							<label>
+								<input class="checkbox" type="checkbox" />
+								<p class="checkbox__title">Peppers</p>
+							</label>
+							<button class="button">Delete Recipe</button>
+						</div>
+
+						<div class="add-ingredient">
+							<input class="input" type="text" placeholder="Add ingredient" />
+							<button class="button">Add</button>
+						</div>
+					</div>
+				</div>
+
+				<button id="complete" class="complete-recipe button">
+					Complete Recipe
+				</button>
+
+				<div class="danger">
+					<h3>Beware</h3>
+					<div class="remove-recipe">
+						<button id="remove-recipe">Delete recipe</button>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script src="./scripts/edit-bundle.js"></script>
+	</body>
+</html>

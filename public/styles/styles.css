@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	width: 1024px;
+	margin: auto;
+}
+
+.ingredients-container {
+	width: 550px;
+	margin: auto;
+}
+
+.recipe__edit--container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.header__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: start;
+	background-color: rgb(53, 70, 109);
+	color: #fcf6f5ff;
+}
+
+.header__container--title {
+	font-size: 2rem;
+	padding-bottom: 3px;
+}
+
+.header__container--subtitle {
+	font-size: 1.1rem;
+	padding-bottom: 20px;
+}
+
+.header__input {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(192, 192, 192);
+	height: 45px;
+	margin-bottom: 15px;
+}
+
+.input {
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	width: 13rem;
+}
+
+.header__input input:focus {
+	outline: none;
+}
+
+.recipes {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.recipe {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	border: 1px solid rgb(233, 230, 230);
+	padding: 5px 15px;
+	width: 55%;
+	height: 4.5rem;
+	background-color: rgb(233, 230, 230);
+	cursor: pointer;
+	margin-bottom: 1.2rem;
+	transition: background-color 0.3s ease-in;
+}
+
+.recipe:hover {
+	background-color: rgb(221, 219, 219);
+}
+
+.recipe__title {
+	font-size: 1.3rem;
+	color: rgb(53, 70, 109);
+	text-transform: capitalize;
+}
+
+.recipe__ingredients {
+	font-size: 1rem;
+	color: rgb(51, 83, 156);
+}
+
+.add-recipe {
+	background-color: rgb(53, 70, 109);
+	color: #fff;
+	padding: 5px 13px;
+	transition: background-color 0.3s ease-in;
+	cursor: pointer;
+}
+
+.add-recipe:hover {
+	background-color: rgb(65, 88, 141);
+}
+
+/* edit page */
+
+.home-link {
+	color: #fff;
+	font-size: 1.1rem;
+}
+
+.recipe__edit {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.recipe__edit--title {
+	width: 35rem;
+	height: 2.5rem;
+	padding: 5px;
+	margin-bottom: 25px;
+}
+
+.recipe__edit--body {
+	width: 35rem;
+	margin-bottom: 25px;
+	padding: 5px;
+}
+
+.recipe__edit--title:focus,
+.recipe__edit--body:focus {
+	outline: 0;
+}
+
+.checklist {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.checklist__title {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+}
+
+.checklist__ingredients--list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+label {
+	display: flex;
+	align-items: center;
+}
+
+.checkbox {
+	margin-right: 5px;
+	transform: scale(1.2);
+}
+
+.checkbox__title {
+	font-size: 1.1rem;
+}
+
+.button {
+	background: transparent;
+	border: none;
+	background-color: rgb(53, 70, 109);
+	color: #fff;
+	padding: 5px 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in;
+}
+.button:hover {
+	background-color: rgb(75, 97, 150);
+}
+
+.add-ingredient .input {
+	border: 1px solid black;
+}
+
+.complete-recipe {
+	margin-top: 2rem;
+	font-size: 0.9rem;
+	padding: 5px 10px;
+}
+
+.danger {
+	margin-top: 2rem;
+}
+
+.danger h3 {
+	font-size: 1.5rem;
+	margin-bottom: 0.4rem;
+}
+
+.remove-recipe button {
+	background: transparent;
+	border: none;
+	background-color: rgb(182, 45, 45);
+	color: #fff;
+	font-size: 0.9rem;
+	padding: 5px 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in;
+	margin-bottom: 50px;
+}
+
+.remove-recipe button:hover {
+	background-color: rgb(124, 38, 38);
+}
