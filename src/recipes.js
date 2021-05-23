@@ -1,23 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-let recipes = [
-	{
-		title: "Pizza",
-		body: "You have all ingredients",
-	},
-	{
-		title: "Burrito",
-		body: "You have some of the ingredients",
-	},
-	{
-		title: "rice tacos",
-		body: "You have one of the ingredients",
-	},
-	{
-		title: "Pancakes",
-		body: "You have one of the ingredients",
-	},
-];
+let recipes = [];
 
 const getRecipes = () => recipes;
 
