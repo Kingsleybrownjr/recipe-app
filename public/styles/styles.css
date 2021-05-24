@@ -16,6 +16,15 @@ a {
 	margin: auto;
 }
 
+.no-recipes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(53, 70, 109);
+	font-size: 1.5rem;
+	visibility: hidden;
+}
+
 .header__container {
 	display: flex;
 	flex-direction: column;

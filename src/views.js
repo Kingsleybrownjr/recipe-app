@@ -4,8 +4,13 @@ import { capitalizeFirstLetter, removeIngredient } from "./ingredients";
 
 const renderRecipes = () => {
 	const recipesDiv = document.querySelector("#recipes");
+	const noRecipesDiv = document.querySelector(".no-recipes");
 	const recipes = getRecipes();
 	const filters = getFilters();
+
+	if (recipes.length === 0) {
+		noRecipesDiv.style.visibility = "visible";
+	}
 
 	const filterRecipes = recipes.filter(recipe =>
 		recipe.title.toLowerCase().includes(filters.searchText)
