@@ -1,6 +1,6 @@
 import { getRecipes } from "./recipes";
 import { getFilters } from "./filters";
-import { removeIngredient } from "./ingredients";
+import { capitalizeFirstLetter, removeIngredient } from "./ingredients";
 
 const renderRecipes = () => {
 	const recipesDiv = document.querySelector("#recipes");
@@ -96,7 +96,7 @@ const renderIngredientsList = recipeId => {
 		checkboxTitle.classList.add("checkbox__title");
 		deleteBtn.classList.add("button", "deleteBtn");
 
-		checkboxTitle.textContent = item.ingredients;
+		checkboxTitle.textContent = capitalizeFirstLetter(item.ingredients);
 		deleteBtn.textContent = "Delete";
 
 		label.appendChild(checkbox);

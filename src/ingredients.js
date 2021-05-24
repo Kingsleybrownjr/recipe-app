@@ -9,4 +9,6 @@ const removeIngredient = (recipes, id) => {
 	}
 };
 
-export { removeIngredient };
+const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+export { removeIngredient, capitalizeFirstLetter };
