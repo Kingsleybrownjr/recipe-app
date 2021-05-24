@@ -17,6 +17,10 @@ const updateRecipe = (id, updates) => {
 		recipe.body = updates.body;
 	}
 
+	if (typeof updates.ingredients === "string") {
+		recipe.ingredients.push({ ingredients: updates.ingredients, id: uuidv4() });
+	}
+
 	return recipe;
 };
 
@@ -26,8 +30,10 @@ const createRecipe = () => {
 		title: "",
 		id: recipeId,
 		body: "",
+		ingredients: [],
 	});
 	saveRecipes();
+
 	return recipeId;
 };
 
