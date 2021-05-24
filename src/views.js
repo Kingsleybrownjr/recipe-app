@@ -1,4 +1,4 @@
-import { getRecipes, saveRecipes, updateRecipe } from "./recipes";
+import { getRecipes } from "./recipes";
 import { getFilters } from "./filters";
 import { removeIngredient } from "./ingredients";
 
@@ -14,6 +14,7 @@ const renderRecipes = () => {
 	recipesDiv.innerHTML = "";
 
 	filterRecipes.forEach(recipe => {
+		let ingredientList = [];
 		const recipeDiv = document.createElement("a");
 		const recipeTitle = document.createElement("p");
 		const recipeBody = document.createElement("p");
@@ -23,14 +24,32 @@ const renderRecipes = () => {
 		recipeBody.classList.add("recipe__ingredients");
 
 		recipeTitle.textContent = recipe.title;
-		recipeBody.textContent = recipe.body;
 
 		recipeDiv.setAttribute("href", `edit.html#${recipe.id}`);
 
 		recipeDiv.appendChild(recipeTitle);
 		recipeDiv.appendChild(recipeBody);
 		recipesDiv.appendChild(recipeDiv);
+
+		renderRecipeBody(recipeBody, recipe, ingredientList);
 	});
+};
+
+const renderRecipeBody = (recipeBody, recipe, ingredientList) => {
+	recipe.ingredients.forEach(ingredient => {
+		ingredientList.push(ingredient.inStock);
+	});
+	const haveAll = ingredientList.every(item => item);
+	const haveSome = ingredientList.some(item => item);
+	const haveNone = ingredientList.every(item => !item);
+
+	if (haveAll) {
+		recipeBody.textContent = "You have all the ingredients";
+	} else if (haveSome) {
+		recipeBody.textContent = "You have some of the ingredients";
+	} else if (haveNone) {
+		recipeBody.textContent = "You have none of the ingredients";
+	}
 };
 
 const renderEditPage = recipeId => {
@@ -56,8 +75,6 @@ const renderIngredientsList = recipeId => {
 	const recipes = getRecipes();
 
 	const recipe = recipes.find(recipe => recipe.id === recipeId);
-
-	let score = 0;
 
 	ingredientsList.innerHTML = "";
 
@@ -89,14 +106,11 @@ const renderIngredientsList = recipeId => {
 			removeIngredient(recipe, item.id);
 			renderIngredientsList(recipeId);
 		});
-		
 
 		checkbox.addEventListener("change", e => {
 			item.inStock = e.target.checked;
 		});
 	});
-
-	
 };
 
 export { renderRecipes, renderEditPage, renderIngredientsList };
