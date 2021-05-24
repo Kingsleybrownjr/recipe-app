@@ -18,7 +18,7 @@ const updateRecipe = (id, updates) => {
 	}
 
 	if (typeof updates.ingredients === "string") {
-		recipe.ingredients.push({ ingredients: updates.ingredients, id: uuidv4() });
+		recipe.ingredients.push({ ingredients: updates.ingredients, id: uuidv4(), inStock: false });
 	}
 
 	return recipe;

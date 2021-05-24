@@ -26,6 +26,9 @@ recipeBody.addEventListener("input", e => {
 
 addIngredientBtn.addEventListener("click", e => {
 	e.preventDefault();
+
+	if (addIngredientInput.value === "") return;
+
 	updateRecipe(recipeId, {
 		ingredients: addIngredientInput.value,
 	});
@@ -34,9 +37,9 @@ addIngredientBtn.addEventListener("click", e => {
 	addIngredientInput.value = "";
 });
 
-completeRecipeBtn.addEventListener("click", e => saveRecipes());
+completeRecipeBtn.addEventListener("click", () => saveRecipes());
 
-removeRecipeBtn.addEventListener("click", e => removeRecipe(recipeId));
+removeRecipeBtn.addEventListener("click", () => removeRecipe(recipeId));
 
 window.addEventListener("storage", e => {
 	if (e.key === "recipe") {

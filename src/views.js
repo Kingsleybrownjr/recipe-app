@@ -1,6 +1,6 @@
-import { getRecipes } from "./recipes";
+import { getRecipes, saveRecipes, updateRecipe } from "./recipes";
 import { getFilters } from "./filters";
-import {removeIngredient} from './ingredients'
+import { removeIngredient } from "./ingredients";
 
 const renderRecipes = () => {
 	const recipesDiv = document.querySelector("#recipes");
@@ -57,6 +57,8 @@ const renderIngredientsList = recipeId => {
 
 	const recipe = recipes.find(recipe => recipe.id === recipeId);
 
+	let score = 0;
+
 	ingredientsList.innerHTML = "";
 
 	recipe.ingredients.forEach(item => {
@@ -81,11 +83,20 @@ const renderIngredientsList = recipeId => {
 		ingredientsDiv.appendChild(deleteBtn);
 		ingredientsList.appendChild(ingredientsDiv);
 
+		checkbox.checked = item.inStock;
+
 		deleteBtn.addEventListener("click", () => {
 			removeIngredient(recipe, item.id);
 			renderIngredientsList(recipeId);
 		});
+		
+
+		checkbox.addEventListener("change", e => {
+			item.inStock = e.target.checked;
+		});
 	});
+
+	
 };
 
 export { renderRecipes, renderEditPage, renderIngredientsList };
