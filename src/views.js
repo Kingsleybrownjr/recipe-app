@@ -43,6 +43,11 @@ const renderRecipeBody = (recipeBody, recipe, ingredientList) => {
 	const haveSome = ingredientList.some(item => item);
 	const haveNone = ingredientList.every(item => !item);
 
+	if (ingredientList.length === 0) {
+		recipeBody.textContent = "Please complete ingredient list";
+		return;
+	}
+
 	if (haveAll) {
 		recipeBody.textContent = "You have all the ingredients";
 	} else if (haveSome) {

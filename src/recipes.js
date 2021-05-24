@@ -18,7 +18,11 @@ const updateRecipe = (id, updates) => {
 	}
 
 	if (typeof updates.ingredients === "string") {
-		recipe.ingredients.push({ ingredients: updates.ingredients, id: uuidv4(), inStock: false });
+		recipe.ingredients.push({
+			ingredients: updates.ingredients,
+			id: uuidv4(),
+			inStock: false,
+		});
 	}
 
 	return recipe;
@@ -27,7 +31,7 @@ const updateRecipe = (id, updates) => {
 const createRecipe = () => {
 	const recipeId = uuidv4();
 	recipes.push({
-		title: "",
+		title: "Empty Recipe",
 		id: recipeId,
 		body: "",
 		ingredients: [],

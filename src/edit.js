@@ -13,6 +13,7 @@ const recipeId = location.hash.substring(1);
 renderEditPage(recipeId);
 
 recipeTitle.addEventListener("input", e => {
+	if (e.target.value === "") return;
 	updateRecipe(recipeId, {
 		title: e.target.value,
 	});
