@@ -16,18 +16,6 @@ a {
 	margin: auto;
 }
 
-.ingredients-container {
-	width: 550px;
-	margin: auto;
-}
-
-.recipe__edit--container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
 .header__container {
 	display: flex;
 	flex-direction: column;
@@ -65,6 +53,11 @@ a {
 
 .header__input input:focus {
 	outline: none;
+}
+
+.ingredients-container {
+	width: 550px;
+	margin: auto;
 }
 
 .recipes {
@@ -121,6 +114,13 @@ a {
 .home-link {
 	color: #fff;
 	font-size: 1.1rem;
+}
+
+.recipe__edit--container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .recipe__edit {
@@ -228,4 +228,120 @@ label {
 
 .remove-recipe a:hover {
 	background-color: rgb(124, 38, 38);
+}
+
+@media screen and (max-width: 280) {
+	.container {
+		width: 280px;
+	}
+
+	.recipe__edit--container {
+		width: 280px;
+	}
+
+	.recipe__edit--title {
+		width: 280px;
+	}
+
+	.recipe__edit--body {
+		height: 200px;
+		width: 280px;
+	}
+	.checklist__ingredients--list {
+		width: 280px;
+	}
+}
+@media screen and (max-width: 320) {
+	.container {
+		width: 320px;
+	}
+
+	.recipe__edit--container {
+		width: 300px;
+	}
+
+	.recipe__edit--title {
+		width: 300px;
+	}
+
+	.recipe__edit--body {
+		height: 200px;
+		width: 300px;
+	}
+	.checklist__ingredients--list {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.container {
+		width: 375px;
+	}
+
+	.recipe__edit--container {
+		width: 300px;
+	}
+
+	.recipe__edit--title {
+		width: 300px;
+	}
+
+	.recipe__edit--body {
+		height: 200px;
+		width: 300px;
+	}
+
+	.checklist__ingredients--list {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.container {
+		width: 414px;
+	}
+
+	.recipe__edit--container {
+		width: 300px;
+	}
+
+	.recipe__edit--title {
+		width: 300px;
+	}
+
+	.recipe__edit--body {
+		height: 200px;
+		width: 300px;
+	}
+	.checklist__ingredients--list {
+		width: 300px;
+	}
+}
+@media screen and (max-width: 540px) {
+	.container {
+		width: 540px;
+	}
+
+	.recipe__edit--container {
+		width: 300px;
+	}
+
+	.recipe__edit--title {
+		width: 300px;
+	}
+
+	.recipe__edit--body {
+		height: 200px;
+		width: 300px;
+	}
+	.checklist__ingredients--list {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.recipe__edit--body {
+		height: 400px;
+		width: 100%;
+	}
 }
